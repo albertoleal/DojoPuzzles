@@ -20,23 +20,16 @@ class Intervalo
   
   def agrupados
     valores_em_lista = gerar_sublistas
-    
-    lista_valores = valores_em_lista.inject([]) do |result, element|
-      primeiro_elemento = element.first
-      ultimo_elemento   = element.last
-
-      unless primeiro_elemento.eql? ultimo_elemento
-        result << "#{primeiro_elemento}-#{ultimo_elemento}"
-      else
-        result << "#{primeiro_elemento}"
-      end
-
-      result
-    end
 
     saida = ""
-    lista_valores.each do |lista|
-      saida << "[#{lista}], "
+    valores_em_lista.each do |lista|
+      primeiro_elemento = lista.first
+      ultimo_elemento   = lista.last
+
+      retorno = "#{primeiro_elemento}"
+      retorno << "-#{ultimo_elemento}" unless primeiro_elemento.eql? ultimo_elemento
+
+      saida << "[#{retorno}], "
     end
     
     saida[0..-3]
