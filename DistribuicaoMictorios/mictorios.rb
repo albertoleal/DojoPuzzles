@@ -1,8 +1,8 @@
 =begin
   Problema: http://dojopuzzles.com/problemas/exibe/distribuicao-de-mictorios/
 
-  Um problema enfrentado pelos homens no uso de mictórios em banheiros públicos é o constrangimento causado por outro homem urinando no mictório ao lado. Uma situação contrangedora é definida quando dois "mijões" deveriam ocupar mictórios adjacentes.
-  Dada uma quantidade de mictórios em um banheiro e a ocupação inicial deles (informando em qual deles já existe um "mijão"), determine quantos "mijões" ainda podem usar os mictórios e qual a posição deles antes para que não ocorra uma situação constrangedora.
+  Um problema enfrentado pelos homens no uso de mictórios em bathrooms públicos é o constrangimento causado por outro homem urinando no mictório ao lado. Uma situação contrangedora é definida quando dois "mijões" deveriam ocupar mictórios adjacentes.
+  Dada uma quantidade de mictórios em um bathroom e a ocupação inicial deles (informando em qual deles já existe um "mijão"), determine quantos "mijões" ainda podem usar os mictórios e qual a posição deles antes para que não ocorra uma situação constrangedora.
 
   Alberto Leal - albertoleal.eti.br
 =end
@@ -43,58 +43,58 @@ if $0 == __FILE__
 
     def test_one_free_mic
       mictorios = [FREE]
-      banheiro = Bathroom.new(mictorios)
+      bathroom = Bathroom.new(mictorios)
 
-      assert_equal [0], banheiro.free_mics
+      assert_equal [0], bathroom.free_mics
     end
 
     def test_one_busy_mic
       mictorios = [BUSY]
-      banheiro = Bathroom.new(mictorios)
+      bathroom = Bathroom.new(mictorios)
 
-      assert_equal [], banheiro.free_mics
+      assert_equal [], bathroom.free_mics
     end
 
     def test_two_free_mics
       mictorios = [FREE, FREE]
-      banheiro = Bathroom.new(mictorios)
+      bathroom = Bathroom.new(mictorios)
 
-      assert_equal [0, 1], banheiro.free_mics
+      assert_equal [0, 1], bathroom.free_mics
     end
 
     def test_two_mics
       mictorios = [FREE, BUSY]
-      banheiro = Bathroom.new(mictorios)
+      bathroom = Bathroom.new(mictorios)
 
-      assert_equal [], banheiro.free_mics
+      assert_equal [], bathroom.free_mics
     end
 
     def test_three_mics
       mictorios = [FREE, BUSY, FREE]
-      banheiro = Bathroom.new(mictorios)
+      bathroom = Bathroom.new(mictorios)
 
-      assert_equal [], banheiro.free_mics
+      assert_equal [], bathroom.free_mics
     end
 
     def test_many_free_mics
       mictorios = [FREE, FREE, FREE, FREE, FREE, FREE, FREE, FREE]
-      banheiro = Bathroom.new(mictorios)
+      bathroom = Bathroom.new(mictorios)
 
-      assert_equal [0,1,2,3,4,5,6,7], banheiro.free_mics
+      assert_equal [0,1,2,3,4,5,6,7], bathroom.free_mics
     end
 
     def test_many_empty_mics
       mictorios = [FREE, BUSY, FREE, BUSY, FREE, BUSY, FREE, BUSY]
-      banheiro = Bathroom.new(mictorios)
+      bathroom = Bathroom.new(mictorios)
 
-      assert_equal [], banheiro.free_mics
+      assert_equal [], bathroom.free_mics
     end
 
     def test_many_mics
       mictorios = [FREE, FREE, FREE, BUSY, FREE, BUSY, FREE, FREE]
-      banheiro = Bathroom.new(mictorios)
+      bathroom = Bathroom.new(mictorios)
 
-      assert_equal [0,1,7], banheiro.free_mics
+      assert_equal [0,1,7], bathroom.free_mics
     end
   end
 end
