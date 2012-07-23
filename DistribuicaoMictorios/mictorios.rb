@@ -22,7 +22,7 @@ class Bathroom
       last_free_mic = mics.last
       last_mic      = @mics[idx - 1]
 
-      mics << idx if (mics.empty? && @mics.size != idx +1) || (mic && (last_free_mic == idx -1 || last_mic == FREE) )
+      mics << idx if (mic && (last_free_mic == idx -1 || last_mic == FREE) )
 
       #Remove last element from list if the next is BUSY
       mics.pop if !mic && last_free_mic == idx -1
