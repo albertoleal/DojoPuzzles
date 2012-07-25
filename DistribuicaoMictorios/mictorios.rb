@@ -16,7 +16,7 @@ class Bathroom
   end
 
   def free_mics
-    return [0] if @mics.size == 1 && @mics[0]
+    return [0] if @mics.size == 1 && @mics.first
 
     free = @mics.each_with_index.inject([])  do |mics, (mic, idx)|
       last_free_mic = mics.last

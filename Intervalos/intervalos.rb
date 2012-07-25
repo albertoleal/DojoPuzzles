@@ -58,6 +58,12 @@ if $0 == __FILE__
   require 'test/unit'
   
   class IntervalosTest < Test::Unit::TestCase
+
+    def test_lista_vazia
+      valores = Intervalo.new()
+      assert_equal "[]", valores.agrupados
+    end
+
     def test_numero_unico
       valores = Intervalo.new(100)
       assert_equal "[100]", valores.agrupados
