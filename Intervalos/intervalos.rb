@@ -60,7 +60,7 @@ if $0 == __FILE__
   class IntervalosTest < Test::Unit::TestCase
 
     def test_lista_vazia
-      valores = Intervalo.new()
+      valores = Intervalo.new
       assert_equal "[]", valores.agrupados
     end
 
