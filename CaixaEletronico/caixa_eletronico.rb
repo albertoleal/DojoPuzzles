@@ -1,3 +1,6 @@
+=begin
+Código feito no Coding Dojo do @caipiraagil
+=end
 class Caixa
   NOTAS = [100, 50 , 20, 10]
   
@@ -37,13 +40,10 @@ if $0 == __FILE__
       @caixa = Caixa.new
     end
     
-    # Checa se existe o metodo sacar
     def test_exist_sacar
       assert @caixa.respond_to? :sacar
     end
     
-    
-    # Sacar 10 reais deveria returnar a mensagem correta
     def test_sacar_dez_reais
       assert_equal('Entregar 1 notas de 10 reais', @caixa.sacar(10))
     end
